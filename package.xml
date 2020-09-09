@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>Our.Umbraco.BlockTypeGridViewPreview</name>
+      <version>0.0.1-alpha</version>
+      <iconUrl></iconUrl>
+      <licence url="https://opensource.org/licenses/MIT">MIT</licence>
+      <url>https://our.umbraco.com</url>
+      <requirements type="strict">
+        <major>8</major>
+        <minor>7</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Søren Kottal</name>
+      <website>https://skttl.dk</website>
+    </author>
+    <readme><![CDATA[A Razor view engine for block lists]]></readme>
+  </info>
+  <files>
+    <folder path="src/Our.Umbraco.BlockTypeGridViewPreview/App_Plugins/Our.Umbraco.BlockTypeGridViewPreview" orgPath="App_Plugins/Our.Umbraco.BlockTypeGridViewPreview" />
+    <file path="src/Our.Umbraco.BlockTypeGridViewPreview/bin/release/Our.Umbraco.BlockTypeGridViewPreview.dll" orgPath="bin/Our.Umbraco.BlockTypeGridViewPreview.dll" />
+  </files>
+  <Actions />
+  <control />
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros />
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+</umbPackage>

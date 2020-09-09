@@ -1,0 +1,6 @@
+{
+  "javascript": [
+    "~/App_Plugins/Our.Umbraco.BlockTypeGridViewPreview/BlockTypeGridViewPreviewController.js",
+    "~/App_Plugins/Our.Umbraco.BlockTypeGridViewPreview/BlockTypeGridViewPreviewHtmlDirective.js
+  ]
+}

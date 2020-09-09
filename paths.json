@@ -1,0 +1,5 @@
+{
+  "library": "src/Our.Umbraco.BlockTypeGridViewPreview",
+  "pluginFolder": "Our.Umbraco.BlockTypeGridViewPreview",
+  "site": ".website"
+}

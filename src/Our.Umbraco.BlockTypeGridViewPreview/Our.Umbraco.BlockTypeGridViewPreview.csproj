@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>Our.Umbraco.BlockTypeGridViewPreview</RootNamespace>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<ContentTargetFolders>content</ContentTargetFolders>
+
+	</PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UmbracoCms.Web" Version="8.7.0-rc" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="App_Plugins\**\*" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="Controllers\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="App_Plugins\Our.Umbraco.BlockTypeGridViewPreview\BlockTypeGridViewPreview.html" />
+	  <None Remove="App_Plugins\Our.Umbraco.BlockTypeGridViewPreview\BlockTypeGridViewPreviewController.js" />
+	  <None Remove="App_Plugins\Our.Umbraco.BlockTypeGridViewPreview\BlockTypeGridViewPreviewHtmlDirective.js" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="Helpers\ViewHelper.cs" />
+	  <Compile Include="Models\BlockPreview.cs" />
+	  <Compile Include="Models\BlockPublishedPropertyType.cs" />
+	  <Compile Include="Models\UnpublishedContent.cs" />
+	  <Compile Include="Models\UnpublishedProperty.cs" />
+	</ItemGroup>
+</Project>
