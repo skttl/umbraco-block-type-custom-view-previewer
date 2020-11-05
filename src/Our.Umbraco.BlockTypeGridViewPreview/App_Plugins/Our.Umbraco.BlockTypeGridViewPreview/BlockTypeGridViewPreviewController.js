@@ -53,6 +53,9 @@ angular.module("umbraco").controller("BlockTypeGridViewPreviewController", [
         $scope.$watch('block.data', function (newVal, oldVal) {
             $scope.setPreview($scope.block);
         }, true);
-
+        
+        $scope.$watch('block.settingsData', function (newVal, oldVal) {
+               $scope.setPreview($scope.block);
+        }, true);
     }
 ]);
