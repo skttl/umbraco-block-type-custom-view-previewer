@@ -45,6 +45,17 @@ angular.module("umbraco").controller("BlockTypeGridViewPreviewController", [
                 if (htmlResult.trim().length > 0) {
                     $scope.preview = htmlResult;
                 }
+            },
+            function (response) {
+                $scope.preview = "<b>Preview not available for this block</b>";
+
+                if (umbraoUser.user && umbraoUser.user.userGroups.indexOf("admin")>=0) {
+                    if (response.statusText)
+                        $scope.preview += "<br/><small>" + response.statusText + "</small>";
+
+                    if (response.data && response.data.ExceptionMessage)
+                        $scope.preview += " - <small> " + response.data.ExceptionMessage + "</small>";
+                }
             });
         };
 
