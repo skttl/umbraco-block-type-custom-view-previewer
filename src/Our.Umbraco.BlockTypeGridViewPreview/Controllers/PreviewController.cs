@@ -51,6 +51,14 @@ namespace Our.Umbraco.BlockTypeGridViewPreview.Controllers
             var publishedContentType = new Lazy<IPublishedContentType>(() => _publishedContentTypeFactory.CreateContentType(contentType)).Value;
             var propertyType = publishedContentType.PropertyTypes.FirstOrDefault(x => x.Alias == data.PropertyAlias);
 
+            // If it's null, it's likely we're looking at a nested block editor
+            if (propertyType == null)
+            {
+                contentType = Services.ContentTypeService.Get(data.NestedContentTypeAlias);
+                publishedContentType = new Lazy<IPublishedContentType>(() => _publishedContentTypeFactory.CreateContentType(contentType)).Value;
+                propertyType = publishedContentType.PropertyTypes.FirstOrDefault(x => x.Alias == data.PropertyAlias);
+            }
+
             var editor = new BlockListPropertyValueConverter(
                 _profilingLogger,
                 new BlockEditorConverter(_publishedSnapshotAccessor, _publishedModelFactory));

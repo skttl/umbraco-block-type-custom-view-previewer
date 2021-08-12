@@ -17,5 +17,8 @@ namespace Our.Umbraco.BlockTypeGridViewPreview.Models
 
         [DataMember(Name = "value")]
         public string Value { get; set; }
+
+        [DataMember(Name = "nestedContentTypeAlias")]
+        public string NestedContentTypeAlias { get; set; }
     }
 }

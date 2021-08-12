@@ -8,8 +8,10 @@ angular.module("umbraco").controller("BlockTypeGridViewPreviewController", [
     function ($scope, editorState, $http) {
 
         let model = $scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent.$parent.model;
+        let nestedModel = $scope.$parent.$parent.$parent.$parent.$parent.$parent.$parent.$parent.$parent.vm;
         let currentState = angular.copy(editorState.current);
         let propertyAlias = model.alias;
+        let nestedContentTypeAlias = nestedModel != null ? nestedModel.model.contentTypeAlias : null;
         let editorAlias = model.editor;
 
 
@@ -35,6 +37,7 @@ angular.module("umbraco").controller("BlockTypeGridViewPreviewController", [
                     pageId: currentState.id,
                     propertyAlias: propertyAlias,
                     contentTypeAlias: currentState.contentTypeAlias,
+                    nestedContentTypeAlias: nestedContentTypeAlias,
                     value: JSON.stringify(value)
                 }),
                 headers: {
